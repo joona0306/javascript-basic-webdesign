@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이벤트</title>
+ </head>
+ <body>
+  <button id="btn">클릭하세요!</button>
+  <p id="show"></p>
+
+  <!-- js -->
+  <script>
+   // 이벤트란?
+   // 웹 페이지에서 발생하는 사건을 의미
+   // 이벤트를 처리하는 함수를 이벤트 핸들러 또는 이벤트 리스너라고 함
+   const show = document.querySelector("#show");
+
+   // 이벤트 핸들러
+   function handleBtn() {
+    show.innerHTML = "클릭하였습니다!";
+   }
+
+   // 이벤트 리스너
+   const btn = document.querySelector("#btn");
+
+   btn.addEventListener("click", () => {
+    handleBtn();
+   });
+  </script>
+ </body>
+</html>

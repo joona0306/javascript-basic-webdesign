@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>배열</title>
+ </head>
+ <body>
+  <p id="show"></p>
+
+  <!-- js -->
+  <script>
+   // 배열: 여러 값을 하나의 변수에 저장할 수 있게 해주는 특별한 변수
+   const fruits = ["사과", "딸기", "천혜향"];
+
+   // 배열 요소 값의 변경
+   fruits[1] = "수박";
+
+   let text = ""; // 초깃값 빈문자열
+   // text += fruits[0];
+   // text += fruits[1];
+   // text += fruits[2];
+
+   // forEach(콜백함수)메서드
+   // 배열 각 요소에 대해 매개변수로 설정된 함수를 실행
+   fruits.forEach((item, index) => {
+    text += `index: ${index}, item: ${item} <br>`;
+   });
+
+   document.querySelector("#show").innerHTML = text;
+  </script>
+ </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>마우스 이벤트</title>
+  <style>
+   #box1 {
+    border: 3px solid red;
+   }
+   #box2 {
+    border: 3px solid blue;
+   }
+   p {
+    border: 1px solid black;
+   }
+  </style>
+ </head>
+ <body>
+  <div id="box1">
+   <p>단락1</p>
+   <span id="show1"></span>
+  </div>
+  <div id="box2">
+   <p>단락2</p>
+   <span id="show2"></span>
+  </div>
+
+  <!-- js -->
+  <script>
+   const box1 = document.querySelector("#box1");
+   const box2 = document.querySelector("#box2");
+   const show1 = document.querySelector("#show1");
+   const show2 = document.querySelector("#show2");
+   let x = 0;
+   let y = 0;
+
+   // 이벤트 핸들러
+   // 1씩 증가
+   const increaseX = () => {
+    x += 1;
+    show1.innerHTML = x;
+   };
+   const increaseY = () => {
+    y += 1;
+    show2.innerHTML = y;
+   };
+
+   // 자신뿐만 아니라 자식요소까지 이벤트 발생
+   // box1.addEventListener("mouseover", increaseX);
+   // 자기 자신만 이벤트 발생
+   // box2.addEventListener("mouseenter", increaseY);
+
+   // 자신뿐만 아니라 자식요소까지 이벤트 발생
+   box1.addEventListener("mouseout", increaseX);
+   // 자기 자신만 이벤트 발생
+   box2.addEventListener("mouseleave", increaseY);
+  </script>
+ </body>
+</html>

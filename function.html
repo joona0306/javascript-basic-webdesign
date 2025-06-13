@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>함수</title>
+ </head>
+ <body>
+  <!-- js -->
+  <script>
+   function fnc() {
+    if (true) {
+     let x = 10; // 변수 x는 if문 내, 즉 블록 내부에서 선언
+    }
+    console.log(x); // 블록 외부에서는 변수 x에 접근 하지 못함
+   }
+
+   fnc();
+  </script>
+ </body>
+</html>

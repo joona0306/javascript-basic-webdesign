@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>컬러 피커 실습예제</title>
+  <!-- CSS -->
+  <style>
+   .color-box {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #333;
+    box-sizing: border-box;
+    margin-top: 20px;
+    background-color: #333;
+   }
+  </style>
+ </head>
+ <body>
+  <div class="color-box" style="background-color: aqua"></div>
+  <p id="hexCodeText">컬러 코드 검색</p>
+  <input type="color" id="colorPicker" />
+  <!-- <p class="text1">클래스 선택자로 선택</p> -->
+
+  <!-- JS -->
+  <script>
+   // // HTML 요소를 id selector로 선택 후 text 변수에 저장
+   // const text = document.querySelector("#colorText");
+   // console.log(text);
+
+   // // HTML 요소를 class selector로 선택 후 text1 변수에 저장
+   // const text1 = document.querySelector(".text1");
+   // console.log(text1);
+
+   // // HTML 요소를 tag selector로 모두 선택 후 texts에 저장
+   // const texts = document.querySelectorAll("p");
+   // console.log(texts);
+
+   // // HTML 요소를 tag selector로 선택 후 text2 변수에 저장
+   // const text2 = document.querySelector("h1");
+   // console.log(text2); // null, 유효하지 않은 값
+
+   // -------------------------------------------------------
+
+   // p 태그 선택 후 hexCodeText 변수에 저장
+   const hexCodeText = document.querySelector("#hexCodeText");
+   console.log(hexCodeText);
+   // input 태그 선택 후 colorPicker 변수에 저장
+   const colorPicker = document.querySelector("#colorPicker");
+   console.log(colorPicker.value); // 빈 문자열
+   // div.color-box 요소를 선택 후 colorBox에 저장
+   const colorBox = document.querySelector(".color-box");
+   console.log(colorBox);
+
+   // colorPicker의 value 값을 읽어오는 함수
+   const inputSelectColor = () => {
+    console.log(colorPicker.value);
+
+    // hexCodeText.innerHTML = `<h1>컬러코드: ${colorPicker.value}</h1>`;
+    colorBox.style.backgroundColor = colorPicker.value;
+
+    if (colorPicker.value === "#ffffff") {
+     hexCodeText.textContent = "흰색 #ffffff";
+    } else if (colorPicker.value === "#000000") {
+     hexCodeText.textContent = "검정색 #000000";
+    } else {
+     hexCodeText.textContent = `컬러코드: ${colorPicker.value}`;
+    }
+   };
+
+   // input 이벤트 발생 시 함수 실행
+   colorPicker.addEventListener("input", inputSelectColor);
+  </script>
+ </body>
+</html>
